@@ -1,0 +1,70 @@
+MongoDB
+mongosh "mongodb+srv://cluster0.iobewva.mongodb.net/" --apiVersion 1 --username ghantepiyush2003 --password 1234
+show databases
+use database_name
+db.students.find().pretty()
+db.students.insertOne({ "key1": "value1", "key2": "value2" })
+
+To interact with your MongoDB database named "PSG" and perform operations such as insertion, deletion, and viewing documents in a collection using the MongoDB shell on your local machine, follow these steps:
+
+1. *Open the MongoDB Shell*:
+   Open your terminal and start the MongoDB shell by typing:
+   sh
+   mongo
+   
+
+2. *Switch to Your Database*:
+   Switch to the "PSG" database by running:
+   sh
+   use PSG
+   
+
+3. *Viewing Documents*:
+   To view documents in a collection, use the find() method. Replace collection_name with the name of your collection:
+   sh
+   db.collection_name.find().pretty()
+   
+   - The pretty() method formats the output for readability.
+
+4. *Inserting Documents*:
+   To insert a document into a collection, use the insertOne() method. Replace collection_name with the name of your collection and adjust the document structure as needed:
+   sh
+   db.collection_name.insertOne({ "key1": "value1", "key2": "value2" })
+   
+   - To insert multiple documents at once, use insertMany():
+     sh
+     db.collection_name.insertMany([
+       { "key1": "value1", "key2": "value2" },
+       { "key1": "value3", "key2": "value4" }
+     ])
+     
+
+5. *Deleting Documents*:
+   To delete documents from a collection, use the deleteOne() or deleteMany() methods. Replace collection_name with the name of your collection and adjust the query to match the documents you want to delete:
+   sh
+   db.collection_name.deleteOne({ "key1": "value1" })
+   
+   - To delete multiple documents:
+     sh
+     db.collection_name.deleteMany({ "key1": "value1" })
+     
+
+6. *Example*:
+   Let's assume your collection name is students.
+
+   - *Insert a document*:
+     sh
+     db.students.insertOne({ "name": "John Doe", "age": 22, "major": "Computer Science" })
+     
+
+   - *View documents*:
+     sh
+     db.students.find().pretty()
+     
+
+   - *Delete a document*:
+     sh
+     db.students.deleteOne({ "name": "John Doe" })
+     
+
+By following these steps, you can easily perform insertion, deletion, and viewing operations on your MongoDB collection using the MongoDB shell on your local machine.
